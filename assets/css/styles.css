@@ -21,10 +21,131 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) skewX(-20deg);
-  width: 30rem;
-  height: 5rem;
-  background: var(--tertiaryColor);
-  border: .2rem solid var(--secondaryColor);
+  transform: translate(-50%, -50%);
+}
+
+ul {
+  display: flex;
   overflow: hidden;
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+  width: 5rem;
+  height: 5rem;
+  border: .2rem soild var(--primaryColor);
+  background: var(--primaryColor);
+  /* border: .2rem soild #262626;
+  background: #262626; */
+  box-shadow: 3rem 0 3rem rgba(0, 0, 0, 1);
+  color: var(--tertiaryColor);
+}
+
+ul li:nth-child(even)::before {
+  content: attr(data-attr);
+  text-align: center;
+  line-height: 5rem;
+  font-size: 2.75em;
+  width: 100%;
+  height: 100%;
+  animation: animateEven 1.5s linear infinite;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 1);
+  display: inline-block;
+  background: var(--secondaryColor);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes animateEven {
+  0% {
+    transform: scale(1);
+    top: -100%;
+  }
+
+  30% {
+    transform: scale(.5);
+    top: 0%;
+  }
+
+  70% {
+    transform: scale(.5);
+    top: 0%;
+  }
+
+  100% {
+    transform: scale(.2);
+    top: 100%;
+  }
+}
+
+ul li:nth-child(odd)::before {
+  content: attr(data-attr);
+  text-align: center;
+  line-height: 5rem;
+  font-size: 2.75em;
+  width: 100%;
+  height: 100%;
+  animation: animateOdd 1.5s linear infinite;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 1);
+  display: inline-block;
+  background: var(--secondaryColor);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes animateOdd {
+  0% {
+    transform: scale(1);
+    top: 100%;
+  }
+
+  30% {
+    transform: scale(.5);
+    top: 0%;
+  }
+
+  70% {
+    transform: scale(.5);
+    top: 0%;
+  }
+
+  100% {
+    transform: scale(.2);
+    top: -100%;
+  }
+}
+
+ul li:nth-child(1)::before {
+  animation-delay: 0s;
+}
+
+ul li:nth-child(2)::before {
+  animation-delay: .2s;
+}
+
+ul li:nth-child(3)::before {
+  animation-delay: .4s;
+}
+
+ul li:nth-child(4)::before {
+  animation-delay: .6s;
+}
+
+ul li:nth-child(5)::before {
+  animation-delay: .8s;
+}
+
+ul li:nth-child(6)::before {
+  animation-delay: 1s;
+}
+
+ul li:nth-child(7)::before {
+  animation-delay: 1.2s;
+}
+
+ul li:nth-child(8)::before {
+  animation-delay: 1.4s;
 }
